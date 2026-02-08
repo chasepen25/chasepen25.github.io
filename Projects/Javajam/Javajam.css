@@ -1,0 +1,50 @@
+/* Basic page styles */
+body {
+    background-color: #FCEBB6;
+    color: #221811;
+    font-family: 'Bitcount Single'; /* Body text font */
+    margin: 0;
+    padding: 0;
+}
+
+/* Center page content */
+#wrapper {
+    background-color: #FEFAEB;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styling */
+header {
+    background-color: #D2B48C;
+    color: #8C3826;
+    text-align: center;
+}
+
+/* Headings use Rubik Storm */
+h1, h2 {
+    font-family: 'Rubik Storm'; /* Headings font */
+}
+
+h1 {
+    line-height: 200%;
+}
+
+h2 {
+    color: #8C3826;
+}
+
+/* Navigation */
+nav {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #D2B48C;
+    font-size: 0.6em;
+    font-style: italic;
+    text-align: center;
+}
