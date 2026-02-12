@@ -1,8 +1,13 @@
 /* Basic page styles */
 body {
     background-color: #FCEBB6;
+    background-image: url(fadedroad50.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
     color: #221811;
-    font-family: 'Bitcount Single'; /* Body text font */
+    font-family: 'Bitcount Single';
     margin: 0;
     padding: 0;
 }
@@ -10,9 +15,12 @@ body {
 /* Center page content */
 #wrapper {
     background-color: #FEFAEB;
+    min-width: 900px;
+    max-width: 1280px;
     width: 80%;
     margin: 0 auto;
     padding: 20px;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 /* Header styling */
@@ -20,15 +28,17 @@ header {
     background-color: #D2B48C;
     color: #8C3826;
     text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 /* Headings use Rubik Storm */
 h1, h2 {
-    font-family: 'Rubik Storm'; /* Headings font */
+    font-family: 'Rubik Storm';
 }
 
 h1 {
-    line-height: 200%;
+    font-size: 3em;
 }
 
 h2 {
@@ -39,6 +49,14 @@ h2 {
 nav {
     font-weight: bold;
     text-align: center;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Remove underline from nav links */
+nav a {
+    text-decoration: none;
 }
 
 /* Footer */
@@ -47,10 +65,47 @@ footer {
     font-size: 0.6em;
     font-style: italic;
     text-align: center;
+    padding: 1em;
+    border-top: 2px solid #8C3826;
 }
+
+/* h4 styling for music months */
+h4 {
+    background-color: #D2B48C;
+    font-size: 1.2em;
+    padding-left: .5em;
+    padding-bottom: .25em;
+}
+
+/* h3 and dt color */
+h3, dt {
+    color: #8C3826;
+}
+
+/* Main content padding */
+main {
+    display: block;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+}
+
+/* Music details section */
+.details {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+/* Image padding */
+img {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Home hero image */
 #homehero {
     height: 300px;
-    background-image: url(images/A5JavaJamStarterImages/hero.jpg);
+    background-image: url(hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
