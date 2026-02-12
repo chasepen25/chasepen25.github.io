@@ -59,16 +59,6 @@ nav a {
     text-decoration: none;
 }
 
-/* Footer */
-footer {
-    background-color: #D2B48C;
-    font-size: 0.6em;
-    font-style: italic;
-    text-align: center;
-    padding: 1em;
-    border-top: 2px solid #8C3826;
-}
-
 /* h4 styling for music months */
 h4 {
     background-color: #D2B48C;
@@ -98,8 +88,9 @@ main {
 
 /* Image padding */
 img {
-    padding-left: 10px;
-    padding-right: 10px;
+	border-style: none;
+	max-width: 100%;
+	height: auto;
 }
 
 /* Home hero image */
@@ -108,4 +99,13 @@ img {
     background-image: url(images/hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+}
+/* Footer */
+footer {
+    background-color: #D2B48C;
+    font-size: 0.6em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
+    border-top: 2px solid #8C3826;
 }
