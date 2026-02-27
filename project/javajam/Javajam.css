@@ -1,38 +1,58 @@
+/* Universal box sizing */
+* {
+    box-sizing: border-box;
+}
+
 /* Basic page styles */
 body {
     background-color: #FCEBB6;
-    background-image: url(fadedroad50.jpg);
+    background-image: url(images/fadedroad50.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-
     color: #221811;
     font-family: 'Bitcount Single';
     margin: 0;
     padding: 0;
 }
 
-/* Center page content */
+/* Wrapper */
 #wrapper {
-    background-color: #FEFAEB;
+    background-color: #231814;
     min-width: 900px;
     max-width: 1280px;
     width: 80%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0;
     box-shadow: 5px 5px 5px #888888;
 }
 
-/* Header styling */
+/* Header */
 header {
     background-color: #D2B48C;
-    color: #8C3826;
-    text-align: center;
+    background-image: url(images/coffeelogo.jpg);
+    background-repeat: no-repeat;
+    padding-left: 240px;
     padding-top: 5px;
     padding-bottom: 5px;
+    color: #231814;
 }
 
-/* Headings use Rubik Storm */
+/* Header links */
+header a {
+    text-decoration: none;
+}
+
+header a:link,
+header a:visited {
+    color: #231814;
+}
+
+header a:hover {
+    color: #FEF6C2;
+}
+
+/* Headings */
 h1, h2 {
     font-family: 'Rubik Storm';
 }
@@ -45,61 +65,117 @@ h2 {
     color: #8C3826;
 }
 
-/* Navigation */
-nav {
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.5em;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-/* Remove underline from nav links */
-nav a {
-    text-decoration: none;
-}
-
-/* h4 styling for music months */
-h4 {
-    background-color: #D2B48C;
-    font-size: 1.2em;
-    padding-left: .5em;
-    padding-bottom: .25em;
-}
-
-/* h3 and dt color */
 h3, dt {
     color: #8C3826;
 }
 
-/* Main content padding */
+/* Navigation (LEFT COLUMN) */
+nav {
+    float: left;
+    width: 200px;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding-top: 5px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:link {
+    color: #FEF6C2;
+}
+
+nav a:visited {
+    color: #D2B48C;
+}
+
+nav a:hover {
+    color: #CC9933;
+}
+
+/* Main Content (RIGHT COLUMN) */
 main {
-    display: block;
-    padding-left: 2em;
+    margin-left: 200px;
+    padding: 0;
+    background-color: #FEF6C2;
+    overflow: auto;
+}
+
+/* Add padding back inside main */
+main h2,
+main h3,
+main h4,
+main p,
+main div,
+main ul,
+main dl {
+    padding-left: 3em;
+    padding-right: 2em;
+}
+
+/* Hero Images */
+#homehero {
+    height: 300px;
+    background-image: url(images/homehero.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#heromugs {
+    height: 300px;
+    background-image: url(images/heromugs.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#heroguitar {
+    height: 300px;
+    background-image: url(images/heroguitar.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* h4 styling (Music page) */
+h4 {
+    text-transform: uppercase;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 0;
+    clear: left;
+}
+
+/* Float class for music thumbnails */
+.floatleft {
+    float: left;
     padding-right: 2em;
     padding-bottom: 2em;
 }
 
-/* Music details section */
+/* Details section */
 .details {
     padding-left: 20%;
     padding-right: 20%;
+    overflow: auto;
 }
 
-/* Image padding */
+/* Three-column layout for menu */
+.onethird {
+    float: left;
+    width: 33%;
+}
+
+/* Images */
 img {
-	border-style: none;
-	max-width: 100%;
-	height: auto;
+    border-style: none;
+    max-width: 100%;
+    height: auto;
 }
 
-/* Home hero image */
-#homehero {
-    height: 300px;
-    background-image: url(images/hero.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 /* Footer */
 footer {
     background-color: #D2B48C;
