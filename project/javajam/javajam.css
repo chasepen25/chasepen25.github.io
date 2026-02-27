@@ -160,7 +160,8 @@ h4 {
 .details {
     padding-left: 20%;
     padding-right: 20%;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 /* Three-column layout for menu */
