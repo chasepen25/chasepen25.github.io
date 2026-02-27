@@ -30,6 +30,7 @@ body {
 /* Header */
 header {
     background-color: #D2B48C;
+    background-image: url(images/A5JavaJamStarterImages/hero.jpg);
     background-repeat: no-repeat;
     padding-left: 240px;
     padding-top: 5px;
