@@ -223,3 +223,58 @@ footer {
         background-image: url("images/A8JavaJamStarterImages/herojobs.jpg");
     }
 }
+
+@media (max-width: 599px) {
+    #wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    header {
+        padding-left: 1em;
+        background-image: none;
+    }
+
+    nav {
+        float: none;
+        width: auto;
+        font-size: 1.1em;
+        text-align: center;
+    }
+
+    nav ul {
+        padding: 0.5em 0;
+    }
+
+    nav li {
+        display: inline-block;
+        margin: 0 0.4em;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    main h2,
+    main h3,
+    main h4,
+    main p,
+    main div,
+    main ul,
+    main dl {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .onethird,
+    .floatleft {
+        float: none;
+        width: auto;
+        padding-right: 0;
+    }
+
+    .details {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
