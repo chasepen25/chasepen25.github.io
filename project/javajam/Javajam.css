@@ -98,7 +98,6 @@ nav a:visited {
 nav a:hover {
     color: #CC9933;
 }
-
 /* Main Content (RIGHT COLUMN) */
 main {
     margin-left: 200px;
@@ -204,77 +203,4 @@ footer {
     text-align: center;
     padding: 1em;
     border-top: 2px solid #8C3826;
-}
-
-@media (min-width: 600px) {
-    form {
-        width: 40%;
-        display: grid;
-        gap: 1em;
-        grid-template-columns: 6em 1fr;
-    }
-
-    input[type="submit"] {
-        grid-column: 2 / 3;
-        width: 9em;
-    }
-
-    #herojobs {
-        background-image: url("images/A8JavaJamStarterImages/herojobs.jpg");
-    }
-}
-
-@media (max-width: 599px) {
-    #wrapper {
-        min-width: 0;
-        width: 100%;
-    }
-
-    header {
-        padding-left: 1em;
-        background-image: none;
-    }
-
-    nav {
-        float: none;
-        width: auto;
-        font-size: 1.1em;
-        text-align: center;
-    }
-
-    nav ul {
-        padding: 0.5em 0;
-    }
-
-    nav li {
-        display: inline-block;
-        margin: 0 0.4em;
-    }
-
-    main {
-        margin-left: 0;
-    }
-
-    main h2,
-    main h3,
-    main h4,
-    main p,
-    main div,
-    main ul,
-    main dl {
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-
-    .onethird,
-    .floatleft {
-        float: none;
-        width: auto;
-        padding-right: 0;
-    }
-
-    .details {
-        padding-left: 1em;
-        padding-right: 1em;
-    }
 }
