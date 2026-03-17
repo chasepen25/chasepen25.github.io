@@ -31,17 +31,27 @@
     </nav>
 
     <main>
-        <h2>Join the JavaJam Team</h2>
-
+        <div id="herojobs"></div>
+        <h2>Jobs at JavaJam</h2>
         <p>
-            We’re not hiring at the moment, but check back soon. This page will be updated
-            with openings, qualifications, and how to apply.
+            Want to work at JavaJam? Fill out the form below to start your application.
+            All information is required.
         </p>
+        <form method="post" action="https://webdevbasics.net/scripts/javajam8.php">
+            <label for="myName">Name:</label>
+            <input type="text" id="myName" name="myName" required>
 
-        <p>
-            Interested in future roles? Email us at
-            <a href="mailto:chase@penrose.com">chase@penrose.com</a>.
-        </p>
+            <label for="myEmail">E-mail:</label>
+            <input type="email" id="myEmail" name="myEmail" required>
+
+            <label for="myStart">Start Date:</label>
+            <input type="date" id="myStart" name="myStart" required>
+
+            <label for="myExperience">Experience:</label>
+            <textarea id="myExperience" name="myExperience" rows="2" cols="20" required></textarea>
+
+            <input type="submit" value="Apply Now">
+        </form>
     </main>
 
     <footer>
