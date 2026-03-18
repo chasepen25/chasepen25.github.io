@@ -68,48 +68,28 @@
 								<h2 class="sr-only">Posts</h2>
 								<article>
 									<header>
-										<span class="date">What I notice first</span>
-										<h2>Visual style and atmosphere</h2>
+										<span class="date">List Highlights</span>
+										<h2><a href="https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/">Oscar 2025 picks</a></h2>
 									</header>
-									<a href="https://letterboxd.com/ace_as_chase/" class="image fit"><img src="images/pic02.jpg" alt="A moody cinematic still used to represent visual style and atmosphere."></a>
-									<p>I pay attention to how a movie looks and feels right away. Color, framing, editing, and production design usually shape my first impression before the plot fully settles in.</p>
+									<a href="https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/" class="image fit"><img src="images/pic04.jpg" alt="A theater scene introducing Oscar 2025 Letterboxd list highlights."></a>
+									<p>This section now uses one of my real Letterboxd lists so the smaller cards on the homepage can reflect actual movies I am tracking.</p>
 									<ul class="actions special">
-										<li><a href="https://letterboxd.com/ace_as_chase/" class="button">See examples</a></li>
+										<li><a href="https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/" class="button">Open full list</a></li>
 									</ul>
 								</article>
-								<article>
-									<header>
-										<span class="date">What keeps me invested</span>
-										<h2>Characters that feel real</h2>
-									</header>
-									<a href="https://letterboxd.com/ace_as_chase/" class="image fit"><img src="images/pic03.jpg" alt="A dramatic film still representing character-driven storytelling."></a>
-									<p>Even a great concept falls apart if I do not care about the people on screen. My favorite reviews usually come from movies where the characters are specific, messy, and believable.</p>
-									<ul class="actions special">
-										<li><a href="generic.html" class="button">Why it matters</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">What makes a review useful</span>
-										<h2>Short takes with a point of view</h2>
-									</header>
-									<a href="https://letterboxd.com/ace_as_chase/" class="image fit"><img src="images/pic04.jpg" alt="A theater scene representing opinionated movie criticism."></a>
-									<p>I am aiming for reviews that are quick to read but still say something specific. The goal is not just to rate movies, but to explain what worked, what did not, and why.</p>
-									<ul class="actions special">
-										<li><a href="https://letterboxd.com/ace_as_chase/" class="button">Read the feed</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">What I want to build next</span>
-										<h2>Featured reviews and favorites</h2>
-									</header>
-									<a href="#about" class="image fit"><img src="images/pic05.jpg" alt="A still suggesting a curated collection of standout films."></a>
-									<p>The next phase of this site is curating a few standout reviews, favorite films, and themed lists. That will make the project feel more personal than a simple feed embed.</p>
-									<ul class="actions special">
-										<li><a href="elements.html" class="button">Project goals</a></li>
-									</ul>
-								</article>
+								<div id="homepage-list-posts" class="homepage-list-posts" aria-live="polite">
+									<article>
+										<header>
+											<span class="date">Loading list item</span>
+											<h2>Loading from Letterboxd</h2>
+										</header>
+										<a href="https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/" class="image fit"><img src="images/pic05.jpg" alt="Loading placeholder for Letterboxd list cards."></a>
+										<p>The homepage list cards are being filled from my Oscar 2025 RSS feed.</p>
+										<ul class="actions special">
+											<li><a href="https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/" class="button">View list</a></li>
+										</ul>
+									</article>
+								</div>
 							</section>
 
 					</div>
@@ -169,6 +149,81 @@
 				.catch(() => {
 					document.getElementById('letterboxd-embed-wrapper-tc').textContent = 'Could not load Letterboxd right now.';
 				});
+			</script>
+			<script>
+			(function () {
+				var feedUrl = 'https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/rss/';
+				var listUrl = 'https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/';
+				var proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl);
+				var container = document.getElementById('homepage-list-posts');
+
+				function stripHtml(value) {
+					var temp = document.createElement('div');
+					temp.innerHTML = value || '';
+					return temp.textContent || temp.innerText || '';
+				}
+
+				function buildSummary(item) {
+					var description = stripHtml(item.querySelector('description') && item.querySelector('description').textContent);
+					if (!description) {
+						return 'A film pulled from my live Oscar 2025 Letterboxd list.';
+					}
+					return description.slice(0, 190) + (description.length > 190 ? '...' : '');
+				}
+
+				function createCard(item) {
+					var itemLink = item.querySelector('link') ? item.querySelector('link').textContent.trim() : listUrl;
+					var titleText = stripHtml(item.querySelector('title') && item.querySelector('title').textContent) || 'Letterboxd entry';
+
+					var article = document.createElement('article');
+					article.innerHTML =
+						'<header>' +
+							'<span class="date">From my Oscar 2025 list</span>' +
+							'<h2><a href="' + itemLink + '"></a></h2>' +
+						'</header>' +
+						'<a href="' + itemLink + '" class="image fit"><img src="images/pic05.jpg" alt=""></a>' +
+						'<p></p>' +
+						'<ul class="actions special"><li><a href="' + itemLink + '" class="button">View on Letterboxd</a></li></ul>';
+
+					article.querySelector('h2 a').textContent = titleText;
+					article.querySelector('img').alt = titleText + ' from my Oscar 2025 Letterboxd list.';
+					article.querySelector('p').textContent = buildSummary(item);
+					return article;
+				}
+
+				function showFallback() {
+					container.innerHTML =
+						'<article>' +
+							'<header><span class="date">List unavailable</span><h2><a href="' + listUrl + '">Oscar 2025 list</a></h2></header>' +
+							'<a href="' + listUrl + '" class="image fit"><img src="images/pic05.jpg" alt="Oscar 2025 list fallback card."></a>' +
+							'<p>The live cards could not load right now, but the full list is still available on Letterboxd.</p>' +
+							'<ul class="actions special"><li><a href="' + listUrl + '" class="button">Open the list</a></li></ul>' +
+						'</article>';
+				}
+
+				fetch(proxyUrl)
+					.then(function (response) {
+						if (!response.ok) {
+							throw new Error('Feed request failed');
+						}
+						return response.text();
+					})
+					.then(function (xmlText) {
+						var parser = new DOMParser();
+						var xml = parser.parseFromString(xmlText.trim(), 'text/xml');
+						var items = Array.prototype.slice.call(xml.querySelectorAll('item')).slice(0, 3);
+
+						if (!items.length) {
+							throw new Error('No items found');
+						}
+
+						container.innerHTML = '';
+						items.forEach(function (item) {
+							container.appendChild(createCard(item));
+						});
+					})
+					.catch(showFallback);
+			})();
 			</script>
 
 	</body>
