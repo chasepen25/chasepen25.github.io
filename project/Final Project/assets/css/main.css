@@ -203,6 +203,54 @@ input, select, textarea {
 		color: rgba(33, 41, 49, 0.75);
 	}
 
+	.table-caption {
+		caption-side: bottom;
+		text-align: left;
+		font-size: 0.9rem;
+		margin-top: 0.75rem;
+		color: rgba(33, 41, 49, 0.75);
+	}
+
+	.form-label {
+		display: block;
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-size: 0.8rem;
+		font-weight: 900;
+		letter-spacing: 0.075em;
+		line-height: 1.5;
+		margin: 0 0 1rem 0;
+		text-transform: uppercase;
+	}
+
+	.form-status {
+		margin: 1rem 0 0 0;
+		font-style: italic;
+		color: #18bfef;
+	}
+
+	.rss-list-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+		gap: 1.5rem;
+		margin-top: 1.5rem;
+	}
+
+	.rss-card {
+		border: solid 2px rgba(33, 41, 49, 0.1);
+		padding: 1.5rem;
+		background: rgba(255, 255, 255, 0.7);
+	}
+
+	.rss-card h3 {
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.rss-card p {
+		margin: 1rem 0 0 0;
+		text-align: left;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-weight: 900;

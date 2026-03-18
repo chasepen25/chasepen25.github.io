@@ -94,6 +94,14 @@
 					<li>It helps visitors understand my taste faster than a long paragraph would.</li>
 					<li>It creates a clean place to expand into top ten lists, genre rankings, and director comparisons.</li>
 				</ul>
+
+				<h2>Live Letterboxd List</h2>
+				<p>This section pulls from one of my public Letterboxd list RSS feeds. That lets me keep the site updated without manually rewriting every list entry on the page.</p>
+				<div class="box">
+					<p class="project-note">Current source: Oscar 2025 list RSS feed.</p>
+					<div id="rss-list-status" class="form-status" aria-live="polite">Loading list items...</div>
+					<div id="rss-list" class="rss-list-grid"></div>
+				</div>
 			</section>
 
 		</div>
@@ -139,6 +147,70 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script>
+		(function () {
+			var feedUrl = 'https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/rss/';
+			var proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl);
+			var container = document.getElementById('rss-list');
+			var status = document.getElementById('rss-list-status');
+
+			function stripHtml(value) {
+				var temp = document.createElement('div');
+				temp.innerHTML = value || '';
+				return temp.textContent || temp.innerText || '';
+			}
+
+			function createItem(item) {
+				var article = document.createElement('article');
+				article.className = 'rss-card';
+
+				var title = document.createElement('h3');
+				title.textContent = stripHtml(item.querySelector('title') && item.querySelector('title').textContent);
+				article.appendChild(title);
+
+				var link = item.querySelector('link') ? item.querySelector('link').textContent.trim() : feedUrl;
+				var anchor = document.createElement('a');
+				anchor.href = link;
+				anchor.className = 'button small';
+				anchor.textContent = 'Open on Letterboxd';
+				article.appendChild(anchor);
+
+				var description = stripHtml(item.querySelector('description') && item.querySelector('description').textContent);
+				if (description) {
+					var summary = document.createElement('p');
+					summary.textContent = description.slice(0, 180) + (description.length > 180 ? '...' : '');
+					article.appendChild(summary);
+				}
+
+				return article;
+			}
+
+			fetch(proxyUrl)
+				.then(function (response) {
+					if (!response.ok) {
+						throw new Error('Feed request failed');
+					}
+					return response.text();
+				})
+				.then(function (xmlText) {
+					var parser = new DOMParser();
+					var xml = parser.parseFromString(xmlText.trim(), 'text/xml');
+					var items = Array.prototype.slice.call(xml.querySelectorAll('item')).slice(0, 6);
+
+					if (!items.length) {
+						throw new Error('No items found');
+					}
+
+					status.textContent = 'Latest entries from my Oscar 2025 list:';
+					items.forEach(function (item) {
+						container.appendChild(createItem(item));
+					});
+				})
+				.catch(function () {
+					status.innerHTML = 'The live RSS feed could not load right now. You can still view the list directly on <a href="' + feedUrl + '">Letterboxd</a>.';
+				});
+		})();
+	</script>
 
 </body>
 </html>
