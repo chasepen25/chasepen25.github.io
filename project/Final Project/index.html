@@ -51,16 +51,30 @@
 									<h2><a href="https://letterboxd.com/ace_as_chase/">Recent reviews and movie takes</a></h2>
 									<p>This project is focused on one thing: sharing what I am watching and what I think makes a movie stick. Instead of filler text and demo cards, this page now points directly to the reviews, reactions, and ratings that define my taste.</p>
 								</header>
-								<a href="https://letterboxd.com/ace_as_chase/" class="image main"><img src="images/movie%20collage.jpg" alt="A collage of movie posters representing recent watches and reviews."></a>
+								<a href="https://letterboxd.com/ace_as_chase/" class="image main"><img src="images/movie collage.jpg" alt="A collage of movie posters representing recent watches and reviews."></a>
 								<ul class="actions special">
 									<li><a href="https://letterboxd.com/ace_as_chase/" class="button large">Visit my Letterboxd</a></li>
 								</ul>
 							</article>
 
 							<section aria-labelledby="letterboxd-heading">
-								<h2>My Letterboxd</h2>
-								<p class="section-intro" id="letterboxd-heading">This live feed is the center of the project. It shows the reviews and ratings I am publishing as I keep building the site.</p>
+								<h2 id="letterboxd-heading">My Letterboxd</h2>
+								<p class="section-intro">This live feed is the center of the project. It shows the reviews and ratings I am publishing as I keep building the site.</p>
 								<div id="letterboxd-embed-wrapper-tc">Loading...</div>
+							</section>
+
+							<section class="box" aria-labelledby="movie-picker-heading">
+								<h2 id="movie-picker-heading">Movie Night Picker</h2>
+								<p class="section-intro">This basic JavaScript feature updates the page based on what kind of movie night sounds best right now.</p>
+								<div class="movie-picker" data-movie-picker>
+									<div class="movie-picker-actions" role="group" aria-label="Choose a movie mood">
+										<button type="button" class="button small primary" data-mood="comfort">Comfort watch</button>
+										<button type="button" class="button small" data-mood="intense">Something intense</button>
+										<button type="button" class="button small" data-mood="visual">Pure visuals</button>
+										<button type="button" class="button small" data-mood="surprise">Surprise me</button>
+									</div>
+									<p class="movie-picker-result" id="movie-picker-result" aria-live="polite">Choose a mood to see what kind of movie I would reach for.</p>
+								</div>
 							</section>
 
 						<!-- Posts -->
@@ -140,91 +154,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-			fetch('https://lb-embed-content.bokonon.dev?username=ace_as_chase')
-				.then(response => response.text())
-				.then(data => {
-					document.getElementById('letterboxd-embed-wrapper-tc').innerHTML = data;
-				})
-				.catch(() => {
-					document.getElementById('letterboxd-embed-wrapper-tc').textContent = 'Could not load Letterboxd right now.';
-				});
-			</script>
-			<script>
-			(function () {
-				var feedUrl = 'https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/rss/';
-				var listUrl = 'https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/';
-				var proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl);
-				var container = document.getElementById('homepage-list-posts');
-
-				function stripHtml(value) {
-					var temp = document.createElement('div');
-					temp.innerHTML = value || '';
-					return temp.textContent || temp.innerText || '';
-				}
-
-				function buildSummary(item) {
-					var description = stripHtml(item.querySelector('description') && item.querySelector('description').textContent);
-					if (!description) {
-						return 'A film pulled from my live Oscar 2025 Letterboxd list.';
-					}
-					return description.slice(0, 190) + (description.length > 190 ? '...' : '');
-				}
-
-				function createCard(item) {
-					var itemLink = item.querySelector('link') ? item.querySelector('link').textContent.trim() : listUrl;
-					var titleText = stripHtml(item.querySelector('title') && item.querySelector('title').textContent) || 'Letterboxd entry';
-
-					var article = document.createElement('article');
-					article.innerHTML =
-						'<header>' +
-							'<span class="date">From my Oscar 2025 list</span>' +
-							'<h2><a href="' + itemLink + '"></a></h2>' +
-						'</header>' +
-						'<a href="' + itemLink + '" class="image fit"><img src="images/pic05.jpg" alt=""></a>' +
-						'<p></p>' +
-						'<ul class="actions special"><li><a href="' + itemLink + '" class="button">View on Letterboxd</a></li></ul>';
-
-					article.querySelector('h2 a').textContent = titleText;
-					article.querySelector('img').alt = titleText + ' from my Oscar 2025 Letterboxd list.';
-					article.querySelector('p').textContent = buildSummary(item);
-					return article;
-				}
-
-				function showFallback() {
-					container.innerHTML =
-						'<article>' +
-							'<header><span class="date">List unavailable</span><h2><a href="' + listUrl + '">Oscar 2025 list</a></h2></header>' +
-							'<a href="' + listUrl + '" class="image fit"><img src="images/pic05.jpg" alt="Oscar 2025 list fallback card."></a>' +
-							'<p>The live cards could not load right now, but the full list is still available on Letterboxd.</p>' +
-							'<ul class="actions special"><li><a href="' + listUrl + '" class="button">Open the list</a></li></ul>' +
-						'</article>';
-				}
-
-				fetch(proxyUrl)
-					.then(function (response) {
-						if (!response.ok) {
-							throw new Error('Feed request failed');
-						}
-						return response.text();
-					})
-					.then(function (xmlText) {
-						var parser = new DOMParser();
-						var xml = parser.parseFromString(xmlText.trim(), 'text/xml');
-						var items = Array.prototype.slice.call(xml.querySelectorAll('item')).slice(0, 3);
-
-						if (!items.length) {
-							throw new Error('No items found');
-						}
-
-						container.innerHTML = '';
-						items.forEach(function (item) {
-							container.appendChild(createCard(item));
-						});
-					})
-					.catch(showFallback);
-			})();
-			</script>
+			<script src="assets/js/project.js"></script>
 
 	</body>
 </html>

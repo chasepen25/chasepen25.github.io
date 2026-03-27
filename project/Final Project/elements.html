@@ -87,6 +87,7 @@
 						<div class="col-12">
 							<label for="visitor-message">What should I improve next?</label>
 							<textarea name="visitor-message" id="visitor-message" rows="6" placeholder="Tell me what felt confusing, unfinished, or especially strong."></textarea>
+							<p class="field-note">Tip: mention one easy fix and one bigger improvement.</p>
 						</div>
 						<div class="col-12">
 							<ul class="actions">
@@ -94,6 +95,7 @@
 								<li><input type="reset" value="Reset"></li>
 							</ul>
 							<p id="form-status" class="form-status" aria-live="polite"></p>
+							<div id="feedback-preview" class="feedback-preview" aria-live="polite" hidden></div>
 						</div>
 					</div>
 				</form>
@@ -154,12 +156,7 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script>
-		document.getElementById('feedback-form').addEventListener('submit', function (event) {
-			event.preventDefault();
-			document.getElementById('form-status').textContent = 'Thanks. Your feedback was recorded for testing notes on this working draft.';
-		});
-	</script>
+	<script src="assets/js/project.js"></script>
 
 </body>
 </html>
