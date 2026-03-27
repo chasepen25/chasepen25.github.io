@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Chase at the Movies</title>
-	<meta name="description" content="A class project and personal movie review hub featuring recent watches, short takes, and a live Letterboxd feed.">
+	<meta name="description" content="A class project movie site featuring favorite films, short reviews, and a simple JavaScript interaction.">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
 </head>
@@ -17,7 +17,7 @@
 					<div id="intro">
 						<h1>Chase at<br>
 						the Movies</h1>
-						<p>A movie review hub built for my final project. It collects my recent watches, quick reactions, and the stuff I keep thinking about after the credits roll.</p>
+						<p>This is my final project website. I used a template for the layout, then I changed the pages, text, and content to make it about movies.</p>
 						<ul class="actions">
 							<li><a href="#main" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -47,25 +47,31 @@
 						<!-- Featured Post -->
 							<article class="post featured" id="reviews">
 								<header class="major">
-									<span class="date">Now Watching</span>
-									<h2><a href="https://letterboxd.com/ace_as_chase/">Recent reviews and movie takes</a></h2>
-									<p>This project is focused on one thing: sharing what I am watching and what I think makes a movie stick. Instead of filler text and demo cards, this page now points directly to the reviews, reactions, and ratings that define my taste.</p>
+									<span class="date">Project Overview</span>
+									<h2>Why I Made This Site</h2>
+									<p>I made this site about movies because that is something I already enjoy. It gave me an easy topic to write about and helped me turn the template into something more personal.</p>
 								</header>
-								<a href="https://letterboxd.com/ace_as_chase/" class="image main"><img src="images/movie collage.jpg" alt="A collage of movie posters representing recent watches and reviews."></a>
+								<div class="image main"><img src="images/movie collage.jpg" alt="A collage of movie posters representing recent watches and reviews."></div>
 								<ul class="actions special">
-									<li><a href="https://letterboxd.com/ace_as_chase/" class="button large">Visit my Letterboxd</a></li>
+									<li><a href="generic.html" class="button large">See My Favorites</a></li>
 								</ul>
 							</article>
 
-							<section aria-labelledby="letterboxd-heading">
-								<h2 id="letterboxd-heading">My Letterboxd</h2>
-								<p class="section-intro">This live feed is the center of the project. It shows the reviews and ratings I am publishing as I keep building the site.</p>
-								<div id="letterboxd-embed-wrapper-tc">Loading...</div>
+							<section aria-labelledby="about-site-heading">
+								<h2 id="about-site-heading">What Is On The Site</h2>
+								<p class="section-intro">Each page has one simple job so the site is easier to follow.</p>
+								<div class="box">
+									<ul>
+										<li>The home page explains what the project is about.</li>
+										<li>The favorites page shows a table of movies I like.</li>
+										<li>The feedback page lets someone leave comments about the site.</li>
+									</ul>
+								</div>
 							</section>
 
 							<section class="box" aria-labelledby="movie-picker-heading">
 								<h2 id="movie-picker-heading">Movie Night Picker</h2>
-								<p class="section-intro">This basic JavaScript feature updates the page based on what kind of movie night sounds best right now.</p>
+								<p class="section-intro">This is my basic JavaScript feature. When you click a button, the text below changes.</p>
 								<div class="movie-picker" data-movie-picker>
 									<div class="movie-picker-actions" role="group" aria-label="Choose a movie mood">
 										<button type="button" class="button small primary" data-mood="comfort">Comfort watch</button>
@@ -73,7 +79,7 @@
 										<button type="button" class="button small" data-mood="visual">Pure visuals</button>
 										<button type="button" class="button small" data-mood="surprise">Surprise me</button>
 									</div>
-									<p class="movie-picker-result" id="movie-picker-result" aria-live="polite">Choose a mood to see what kind of movie I would reach for.</p>
+									<p class="movie-picker-result" id="movie-picker-result" aria-live="polite">Click a button to see my movie pick for that mood.</p>
 								</div>
 							</section>
 
@@ -82,28 +88,26 @@
 								<h2 class="sr-only">Posts</h2>
 								<article>
 									<header>
-										<span class="date">List Highlights</span>
-										<h2><a href="https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/">Oscar 2025 picks</a></h2>
+										<span class="date">Recent Favorite</span>
+										<h2>Spider-Verse</h2>
 									</header>
-									<a href="https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/" class="image fit"><img src="images/pic04.jpg" alt="A theater scene introducing Oscar 2025 Letterboxd list highlights."></a>
-									<p>This section now uses one of my real Letterboxd lists so the smaller cards on the homepage can reflect actual movies I am tracking.</p>
+									<div class="image fit"><img src="images/pic04.jpg" alt="A theater scene representing a featured favorite movie."></div>
+									<p>I like this movie because it looks great, moves fast, and still has heart.</p>
 									<ul class="actions special">
-										<li><a href="https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/" class="button">Open full list</a></li>
+										<li><a href="generic.html" class="button">Read more favorites</a></li>
 									</ul>
 								</article>
-								<div id="homepage-list-posts" class="homepage-list-posts" aria-live="polite">
-									<article>
-										<header>
-											<span class="date">Loading list item</span>
-											<h2>Loading from Letterboxd</h2>
-										</header>
-										<a href="https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/" class="image fit"><img src="images/pic05.jpg" alt="Loading placeholder for Letterboxd list cards."></a>
-										<p>The homepage list cards are being filled from my Oscar 2025 RSS feed.</p>
-										<ul class="actions special">
-											<li><a href="https://letterboxd.com/ACE_AS_CHASE/list/oscar-2025/" class="button">View list</a></li>
-										</ul>
-									</article>
-								</div>
+								<article>
+									<header>
+										<span class="date">Recent Favorite</span>
+										<h2>Whiplash</h2>
+									</header>
+									<div class="image fit"><img src="images/pic05.jpg" alt="A dramatic image representing another favorite movie choice."></div>
+									<p>I like this movie because it stays intense from start to finish and the acting is strong.</p>
+									<ul class="actions special">
+										<li><a href="generic.html" class="button">View the table</a></li>
+									</ul>
+								</article>
 							</section>
 
 					</div>
@@ -112,27 +116,27 @@
 						<footer id="footer">
 							<section>
 								<h2 id="about">About This Project</h2>
-								<p>This site started as a school assignment and is turning into a personal space for movie criticism. The current version highlights my Letterboxd activity, the kinds of details I pay attention to, and the direction I want the project to grow.</p>
-								<p class="project-note">Immediate next steps: add a few featured full reviews, keep expanding the favorites table, and use the feedback form to guide the next visible improvements.</p>
+								<p>This site started as a class assignment. I changed the template so every page fits the movie theme.</p>
+								<p class="project-note">Next steps: add more reviews, add more movies to the table, and make small improvements from feedback.</p>
 						</section>
 							<section class="split contact">
 								<h2 class="sr-only">Project Details</h2>
 							<section class="alt">
 								<h3>Project Focus</h3>
-								<p>Recent watches, short reviews, and personal film criticism.</p>
+								<p>Favorite movies, short reviews, and simple comments.</p>
 							</section>
 							<section>
 								<h3>Platform</h3>
-								<p><a href="https://letterboxd.com/ace_as_chase/">Letterboxd profile</a></p>
+								<p>HTML, CSS, JavaScript, and a customized template.</p>
 							</section>
 							<section>
 								<h3>Status</h3>
-								<p>Early phase, actively being expanded and refined.</p>
+								<p>Working draft with custom content.</p>
 							</section>
 							<section>
 								<h3>Links</h3>
 								<ul class="icons alt">
-									<li><a href="https://letterboxd.com/ace_as_chase/" class="icon solid alt fa-film"><span class="label">Letterboxd</span></a></li>
+									<li><a href="generic.html" class="icon solid alt fa-film"><span class="label">Favorites page</span></a></li>
 									<li><a href="https://github.com/chasepen25" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</section>
