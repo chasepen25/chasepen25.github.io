@@ -255,6 +255,48 @@ input, select, textarea {
 		text-align: center;
 	}
 
+	.letterboxd-status,
+	.letterboxd-empty,
+	.letterboxd-meta {
+		margin: 0;
+	}
+
+	.letterboxd-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+		gap: 1.5rem;
+		margin-top: 1.5rem;
+	}
+
+	.letterboxd-card {
+		padding: 1.5rem;
+		border: solid 2px rgba(33, 41, 49, 0.1);
+		background: rgba(255, 255, 255, 0.65);
+	}
+
+	.letterboxd-card h3 {
+		margin-bottom: 0.5rem;
+	}
+
+	.letterboxd-meta {
+		font-size: 0.95rem;
+		color: rgba(33, 41, 49, 0.7);
+	}
+
+	.letterboxd-film-list {
+		list-style: decimal;
+		margin: 1rem 0 0 1.5rem;
+		padding: 0;
+	}
+
+	.letterboxd-film-list li {
+		margin-bottom: 0.4rem;
+	}
+
+	.letterboxd-film-list li:last-child {
+		margin-bottom: 0;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-weight: 900;
