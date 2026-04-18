@@ -69,9 +69,18 @@
 								</div>
 							</section>
 
+							<section class="box" aria-labelledby="recent-watches-heading">
+								<h2 id="recent-watches-heading">Recent Watches</h2>
+								<p class="section-intro">This section pulls my latest watched movies from Letterboxd RSS with a local Python script, saves them as JSON, and loads them here as recent watch cards.</p>
+								<div class="letterboxd-recent" data-letterboxd-recent data-source="assets/data/letterboxd-recent.json">
+									<p class="letterboxd-status" data-letterboxd-recent-status aria-live="polite">Loading my recent watches...</p>
+									<div class="letterboxd-recent-grid" data-letterboxd-recent-grid hidden></div>
+								</div>
+							</section>
+
 							<section class="box" aria-labelledby="letterboxd-lists-heading">
 								<h2 id="letterboxd-lists-heading">Letterboxd Lists</h2>
-								<p class="section-intro">These four lists are pulled from my Letterboxd profile with a local Python script, then displayed here from a JSON file.</p>
+								<p class="section-intro">These four lists are pulled from my Letterboxd profile with a local Python scraper, then displayed here from a JSON file. Letterboxd RSS works well for recent watches, but custom lists still need scraping.</p>
 								<div class="letterboxd-lists" data-letterboxd-lists data-source="assets/data/letterboxd-lists.json">
 									<p class="letterboxd-status" data-letterboxd-status aria-live="polite">Loading my lists...</p>
 									<div class="letterboxd-grid" data-letterboxd-grid hidden></div>
@@ -83,15 +92,6 @@
 								<p class="section-intro">This will be the spot for the charts from my other class about how the movie industry could recover from COVID and what it should do to make billion-dollar movies again.</p>
 								<div class="box alt">
 									<p><strong>Image placeholder:</strong> I will add one image here later with all of my charts.</p>
-								</div>
-							</section>
-
-							<section class="box" aria-labelledby="recent-watches-heading">
-								<h2 id="recent-watches-heading">Recent Letterboxd Watches</h2>
-								<p class="section-intro">This section pulls my latest watched movies from Letterboxd RSS with a local Python script, saves them as JSON, and loads them here as recent watch cards.</p>
-								<div class="letterboxd-recent" data-letterboxd-recent data-source="assets/data/letterboxd-recent.json">
-									<p class="letterboxd-status" data-letterboxd-recent-status aria-live="polite">Loading my recent watches...</p>
-									<div class="letterboxd-recent-grid" data-letterboxd-recent-grid hidden></div>
 								</div>
 							</section>
 
