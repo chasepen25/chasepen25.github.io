@@ -297,6 +297,71 @@ input, select, textarea {
 		margin-bottom: 0;
 	}
 
+	.letterboxd-recent-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+		gap: 1.5rem;
+		margin-top: 1.5rem;
+	}
+
+	.recent-watch-card {
+		display: grid;
+		grid-template-columns: minmax(6rem, 7.5rem) 1fr;
+		gap: 1rem;
+		align-items: start;
+		padding: 1.25rem;
+		border: solid 2px rgba(33, 41, 49, 0.1);
+		background: rgba(255, 255, 255, 0.72);
+	}
+
+	.recent-watch-poster {
+		display: block;
+		border-bottom: 0;
+	}
+
+	.recent-watch-poster img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 0.35rem;
+		box-shadow: 0 0.75rem 1.5rem rgba(33, 41, 49, 0.14);
+	}
+
+	.recent-watch-content > :last-child {
+		margin-bottom: 0;
+	}
+
+	.recent-watch-meta,
+	.recent-watch-excerpt,
+	.recent-watch-action {
+		margin: 0 0 0.75rem 0;
+	}
+
+	.recent-watch-meta {
+		font-size: 0.95rem;
+		color: rgba(33, 41, 49, 0.72);
+	}
+
+	.recent-watch-excerpt {
+		font-size: 0.95rem;
+		line-height: 1.7;
+	}
+
+	.recent-watch-action a {
+		font-weight: 600;
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.recent-watch-card {
+			grid-template-columns: 1fr;
+		}
+
+		.recent-watch-poster {
+			max-width: 9rem;
+		}
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-weight: 900;

@@ -30,3 +30,9 @@ Credits:
 		jQuery (jquery.com)
 		Scrollex (github.com/ajlkn/jquery.scrollex)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+
+
+Project notes:
+
+	Run `python3 scripts/sync_letterboxd_lists.py` to refresh the Letterboxd list JSON.
+	Run `python3 scripts/sync_letterboxd_recent.py` to refresh the recent watches RSS JSON.

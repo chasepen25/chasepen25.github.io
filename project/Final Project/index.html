@@ -86,11 +86,12 @@
 								</div>
 							</section>
 
-							<section class="box" aria-labelledby="recent-reviews-placeholder-heading">
-								<h2 id="recent-reviews-placeholder-heading">Future Letterboxd Reviews</h2>
-								<p class="section-intro">I plan to re-add my recent Letterboxd reviews later, so this is a placeholder section for that future update.</p>
-								<div class="box alt">
-									<p>Recent review cards or screenshots will go here later.</p>
+							<section class="box" aria-labelledby="recent-watches-heading">
+								<h2 id="recent-watches-heading">Recent Letterboxd Watches</h2>
+								<p class="section-intro">This section pulls my latest watched movies from Letterboxd RSS with a local Python script, saves them as JSON, and loads them here as recent watch cards.</p>
+								<div class="letterboxd-recent" data-letterboxd-recent data-source="assets/data/letterboxd-recent.json">
+									<p class="letterboxd-status" data-letterboxd-recent-status aria-live="polite">Loading my recent watches...</p>
+									<div class="letterboxd-recent-grid" data-letterboxd-recent-grid hidden></div>
 								</div>
 							</section>
 
